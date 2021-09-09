@@ -16,7 +16,7 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t iangallagher/react-test -f ./client/Dockerfile.dev ./client
 script:
-  - docker run -e CI=true iangallagherm/react-test yarn test 
+  - docker run -e CI=true iangallagher/react-test yarn test 
 deploy:
   provider: script
   script: bash ./deploy.sh
