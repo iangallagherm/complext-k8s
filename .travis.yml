@@ -14,7 +14,7 @@ before_install:
   - gcloud config set compute/zone us-west3-a
   - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t iangallagher/react-test -f ./client Dockerfile.dev ./client
+  - docker build -t iangallagher/react-test -f ./client/Dockerfile.dev ./client
 script:
   - docker run -e CI=true iangallagherm/react-test yarn test 
 deploy:
